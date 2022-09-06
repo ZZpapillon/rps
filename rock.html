@@ -6,79 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js.js" defer></script>
 </head>
 
 <body>
-    <script>
-        function getComputerChoice() {
-            const randomNumber = (Math.floor(Math.random() * 3));
-            if (randomNumber === 0) {
-                return 'Rock';
-            } else if (randomNumber === 1) {
-                return 'Scissor';
-            } else {
-                return 'Paper';
-            }
-        }
-
-        let playerScore = 0;
-        let compScore = 0;
-
-
-        function playRound(playerSelection, computerSelection) {
-
-            if (playerSelection === 'Rock' && computerSelection === 'Rock') {
-                return ("Its a draw!")
-            } else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
-                compScore++
-                return ("You Lose! Paper beats Rock");
-            } else if (playerSelection === 'Rock' && computerSelection === 'Scissor') {
-                playerScore++
-                return ("You Win! Rock beats scissor");
-            }
-
-            if (playerSelection === 'Paper' && computerSelection === 'Paper') {
-                return ("Its a draw!")
-            } else if (playerSelection === 'Paper' && computerSelection === 'Scissor') {
-                compScore++
-                return ("You Lose! Scissors beats paper.");
-            } else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
-                playerScore++
-                return ("You Win! Paper beats rock");
-            }
-
-            if (playerSelection === 'Scissor' && computerSelection === 'Scissor') {
-                return ("Its a draw!")
-            } else if (playerSelection === 'Scissor' && computerSelection === 'Rock') {
-                compScore++
-                return ("You losse! Rock beats scissor");
-            } else if (playerSelection === 'Scissor' && computerSelection === 'Paper') {
-                playerScore++
-                return ("You Win! Scissor beats paper");
-
-            }
-        }
-
-        function game() {
-            for (let i = 0; i < 5; i++) {
-                let playerSelection = prompt('Pick your attack:', 'Yo');
-                let computerSelection = getComputerChoice();
-                console.log(playRound(playerSelection, computerSelection));
-            }
-            if (playerScore > compScore) {
-                return ('You beat computer! You are genious!');
-            } else {
-                return ('computer won,better luck next time!');
-            }
-        }
-
-        console.log(game());
-
-
-
-
-
-    </script>
+    <div class="runningScore">
+        <span class="player-score">Player Score:</span>
+        <span class="computer-score">Computers Score:</span>
+    </div>
+    <div class="container">
+        <button class="rock">'Rock'</button>
+        <button class="scissor">'Scissor'</button>
+         <button class="paper">'Paper'</button>
+     </div>
+     <div class="outcome"></div>
+     <div class="winner"></div>
 </body>
 
 </html>
